@@ -9,16 +9,14 @@
       <input id="searchbar" type="text" placeholder="Sauveteurs, bateaux, ..." class="home__header__searchInput" v-model="input">
       <img src="../images/loupe.png" class="home__header__searchIcon">      
     </div>
-    <div>
-        <div v-for="r in search_results" v-bind:key="r">
-            <Bateau v-if="r['type']=='bateau'"
-            :nom_bateau="r['data']['nom']"
-            :capacite="r['data']['capacite']"
-            :description="r['data']['description']"
-            :capitaine="r['data']['capitaine']"
-            :sorties="r['data']['sorties']"
-            />
-        </div>
+    <div class="contain_resultat">
+      <div class="resultat_recherche" v-for="r in search_results" v-bind:key="r">
+              <Bateau v-if="r['type']=='bateau'"
+              :title="r['data']['title']"
+              :date="r['data']['date']"
+              :personnes_sauves="r['data']['personnes_sauves']"
+              />
+      </div>
     </div>
     
 </template>
@@ -39,24 +37,18 @@ export default{
             search_results:[
                 {"type":"bateau",
                 "data":{
-                    "nom":"tom",
-                    "capacite":"5",
-                    "description":"petit bateau",
-                    "capitaine":"bob l'eponge",
-                    "sorties":"80",
+                    "title":"Sauvetage du canot lamaneur GEORGES N\u00b016",
+                    "date":"20 Septembre 1889",
+                    "personnes_sauves":"Michel, Jean-Jean"
                     }
                 },
                 {"type":"bateau",
                 "data":{
-                    "nom":"Bob le gros bateau",
-                    "capacite":"500",
-                    "description":"pas un petit bateau",
-                    "capitaine":"pas bob l'eponge",
-                    "sorties":"10",
+                    "title":"Sauvetage 10",
+                    "date":"2 Juin 1456",
+                    "personnes_sauves":"personnes LOL"
                     }
                 },
-                
-
             ]
         }
     },
@@ -134,6 +126,11 @@ export default{
       border-radius: 0px 15px 15px 0px;
       cursor: pointer;
     }
-  }
+  } 
 }
+.contain_resultat{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 </style>
