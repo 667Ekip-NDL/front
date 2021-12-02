@@ -1,18 +1,25 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Template par Heargo"/>
+    <!--<HelloWorld msg="Template par Heargo"/>-->
+    <div>
+      <h1>test bateau</h1>
+      <Bateau></Bateau>
+      <Bateau></Bateau>
+    </div>
+   
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+//import HelloWorld from '@/components/HelloWorld.vue'
+import Bateau from '@/components/Bateau.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    //HelloWorld,
+    Bateau
   }
 }
 </script>
