@@ -16,6 +16,11 @@ const routes = [
     path: '/blob',
     name: 'Blob',
     component: () => import('@/views/BlobTutorial.vue')
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: () => import('@/views/Search.vue')
   }
 ]
 
