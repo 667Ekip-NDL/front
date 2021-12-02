@@ -1,8 +1,13 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Template par Heargo"/>
-    <FicheTechniqueSauveteur/>
+    <!--<HelloWorld msg="Template par Heargo"/>-->
+    <div>
+      <h1>Test sauveteur</h1>
+      <FicheTechniqueSauveteur/>
+      <h1>test bateau</h1>
+      <Bateau></Bateau>
+      <Bateau></Bateau>
+    </div>
   </div>
 </template>
 
@@ -10,12 +15,14 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import FicheTechniqueSauveteur from '../components/FicheTechniqueSauveteur.vue'
+import Bateau from '@/components/Bateau.vue'
 
 export default {
   name: 'Home',
   components: {
     HelloWorld,
-    FicheTechniqueSauveteur
+    FicheTechniqueSauveteur,
+    Bateau
   }
 }
 </script>
