@@ -3,7 +3,7 @@
         <div class="inline">
             <img class="bateauIMG" src="@/assets/bateau.png" :alt="nom_bateau">
             <div>
-                <h1>Nom: {{nom_bateau}}</h1>
+                <h1>{{nom_bateau}}</h1>
                 <p>Capacité :{{capacite}}</p>
                 <p>Description :{{description}}</p>
                 <p>Capitaine :{{capitaine}}</p>
@@ -15,25 +15,37 @@
     </div>
 </template>
 
-
 <script>
 export default {
     name:"Bateau",
-    data(){
-        return{
-            nom_bateau:"Inconnu",
-            capacite:"Inconnue",
-            description:"Pas de description",
-            capitaine:"Inconnu",
-            sorties:"Inconnue",
-        }
+    props:{
+        nom_bateau:{
+            type: String,
+            default: 'Inconnu'
+        },
+        capacite:{
+            type: String,
+            default: 'Inconnu'
+        },
+        description:{
+            type: String,
+            default: 'Pas de description'
+        },
+        capitaine:{
+            type: String,
+            default: 'Inconnu'
+        },
+        sorties:{
+            type: String,
+            default: 'Inconnu'
+        },
+
     }
 }
 </script>
 
 
 <style lang="scss">
-
     .containerBateau{
         height:300px;
         width:500px;
