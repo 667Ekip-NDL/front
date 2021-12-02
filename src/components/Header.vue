@@ -6,14 +6,73 @@
       </ul>
       <span class="home__header__spacer"></span>
       <span class="home__header__searchText">Rechercher :</span>
-      <input type="text" placeholder="Sauveteurs, bateaux, ..." class="home__header__searchInput">
+      <input id="searchbar" type="text" placeholder="Sauveteurs, bateaux, ..." class="home__header__searchInput" v-model="input">
       <img src="../images/loupe.png" class="home__header__searchIcon">      
+    </div>
+    <div>
+        <div v-for="r in search_results" v-bind:key="r">
+            <Bateau v-if="r['type']=='bateau'"
+            :nom_bateau="r['data']['nom']"
+            :capacite="r['data']['capacite']"
+            :description="r['data']['description']"
+            :capitaine="r['data']['capitaine']"
+            :sorties="r['data']['sorties']"
+            />
+        </div>
     </div>
     
 </template>
 <script>
+
+import Bateau from '@/components/Bateau.vue'
+
 export default{
-    name: 'Header'
+    name: 'Header',
+    components: {
+        Bateau
+    },
+    data(){
+        return{
+            input:"",
+            sauveteur:false,
+            bateau:false,
+            search_results:[
+                {"type":"bateau",
+                "data":{
+                    "nom":"tom",
+                    "capacite":"5",
+                    "description":"petit bateau",
+                    "capitaine":"bob l'eponge",
+                    "sorties":"80",
+                    }
+                },
+                {"type":"bateau",
+                "data":{
+                    "nom":"Bob le gros bateau",
+                    "capacite":"500",
+                    "description":"pas un petit bateau",
+                    "capitaine":"pas bob l'eponge",
+                    "sorties":"10",
+                    }
+                },
+                
+
+            ]
+        }
+    },
+    mounted() {
+        function search(input){
+            if (input.includes(" ") || input.length > 3){
+                console.log(input)
+            }
+            
+        }
+
+        var searchbar = document.getElementById("searchbar")
+        searchbar.addEventListener('input', () => {
+               search(searchbar.value)
+            });
+    }
 }
 </script>
 <style lang="scss">
