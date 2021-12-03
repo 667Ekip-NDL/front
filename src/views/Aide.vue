@@ -20,7 +20,7 @@
             </div>
             <div id="bulle3">
                 <p id="textB3">Comment participer au projet ? <br><br>
-                Pour participer au projet, deux cas de figure se présentent : soit vous détenez des informations officielles (exemple: archives)
+                Pour participer au projet, deux cas de figure se présentent : soit vous détenez des informations officielles
                 pouvant être ajouter au site. Soit vous pouvez partager le site afin que les exploits et le travail des sauveteurs soient reconnus de toutes et tous !
                 </p>
             </div>
