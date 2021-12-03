@@ -5,6 +5,7 @@ export default createStore({
     research_response:{},
     searched:false,
     searchedDone:false,
+    searchStr:""
   },
   mutations: {
     setResearch(state,r){
@@ -15,19 +16,30 @@ export default createStore({
     },
     setSearchedDone(state,b){
       state.searchedDone=b
+    },
+    updateSearchStr(state,v){
+      console.log("before",state.searchStr)
+      state.searchStr=v
+      console.log("after",state.searchStr)
+    },
+    getSearchStr(state){
+      return state.searchStr;
     }
   },
   actions: {
-    search({commit}) {
-      axios.get('https://ndl.sinux.sh/test')
+    search({commit,state}) {
+      var strsearch='https://ndl.sinux.sh/find?search='+state.searchStr
+      console.log(strsearch)
+      axios.get(strsearch)
       .then(function (response) {
+        commit("setSearchedDone",false)
         commit("setSearched",true)
         setTimeout(() => {
         commit("setResearch",response.data.data);
         commit("setSearchedDone",true)
         console.log(response.data.data)
         //alert (response.data);
-        }, 4000);
+        }, 2000);
         
 
 
