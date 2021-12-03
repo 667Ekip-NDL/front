@@ -3,6 +3,7 @@
       <span class="home__header__title">Sauveteurs du dunkerquois</span>
       <ul class="home__header__links">
         <li>Accueil</li>
+        <li>Aide</li>
       </ul>
       <span class="home__header__spacer"></span>
       <span class="home__header__searchText">Rechercher :</span>
