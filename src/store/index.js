@@ -4,6 +4,7 @@ export default createStore({
   state: {
     research_response:{},
     searched:false,
+    searchedDone:false,
   },
   mutations: {
     setResearch(state,r){
@@ -11,6 +12,9 @@ export default createStore({
     },
     setSearched(state,b){
       state.searched=b
+    },
+    setSearchedDone(state,b){
+      state.searchedDone=b
     }
   },
   actions: {
@@ -18,9 +22,13 @@ export default createStore({
       axios.get('https://ndl.sinux.sh/test')
       .then(function (response) {
         commit("setSearched",true)
+        setTimeout(() => {
         commit("setResearch",response.data.data);
+        commit("setSearchedDone",true)
         console.log(response.data.data)
         //alert (response.data);
+        }, 4000);
+        
 
 
       })

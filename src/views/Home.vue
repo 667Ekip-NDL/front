@@ -55,7 +55,8 @@
       </div>
     </div>
   <!--LOADER-->
-    <div v-show="searched && research_response=={}">
+  
+    <div v-show="searched && !searchedDone">
       <img src="@/assets/load.gif" alt="thomas pesquet">
     </div>
   <!--cards-->
@@ -91,7 +92,7 @@ export default {
     Header,Bateau,FicheTechniqueSauveteur
   },
   computed: {
-        ...mapState(['research_response','searched'])
+        ...mapState(['research_response','searched','searchedDone'])
     }
 }
 </script>
