@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <Header/>   
-    <div class="home__content">
+    <Header/>  
+    <div v-show="!searched" class="home__content">
       <div class="home__content__bienvenue">
         <div class="home__content__bienvenue__imageAccueil"></div>
         <p class="home__content__bienvenue__texteAccueil">
@@ -54,22 +54,58 @@
         
       </div>
     </div>
+  <!--LOADER-->
+  
+    <div class="loader" v-show="searched && !searchedDone">
+      <img  src="@/assets/load.gif" alt="thomas pesquet">
+    </div>
+  <!--cards-->
+  <div v-show="searched && research_response!={}">
+    <div>
+        <div v-for="r in research_response" v-bind:key="r">
+            <Bateau v-if="r['type']=='sauvetage'"
+            :title="r['data']['title']"
+            :date="r['data']['date']"
+            :personnes_sauves="r['data']['saved']"
+            />
+            <FicheTechniqueSauveteur v-if="r['type']=='personne'"
+            :nom_sauveteur="r['data']['nom']"
+            :prenom_sauveteur="r['data']['prenom']"
+            :personnes_sauves="r['data']['saved']"
+            />
+        </div>
+    </div>
+  </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
+import Bateau from '@/components/Bateau.vue'
+import FicheTechniqueSauveteur from '@/components/FicheTechniqueSauveteur.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
   components: {
-    Header
-  }
+    Header,Bateau,FicheTechniqueSauveteur
+  },
+  computed: {
+        ...mapState(['research_response','searched','searchedDone'])
+    }
 }
 </script>
 
 <style lang="scss">
+
+.loader{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width: 100%;
+  height: calc(100vh - 64px);
+}
 .home {
   width: 100%;
   min-height: 100vh;
@@ -80,7 +116,7 @@ export default {
     &__bienvenue {
       position: relative;
       width: 100%;
-      height: 700px;
+      height: calc(100vh - 64px - 5px); 
       border-bottom: solid 5px navy;
 
       &__imageAccueil {
@@ -98,7 +134,7 @@ export default {
       &__texteAccueil {
         position: absolute;
         z-index: 1;
-        top: 80px;
+        top: 175px;
         left: 10%;
         margin: 0px;
         padding: 16px;

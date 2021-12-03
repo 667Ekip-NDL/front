@@ -1,6 +1,6 @@
 <template>
     <div class="big_container">
-        <router-link to="/" class="homebtn"><img src="@/assets/boat.png" alt="home">Home</router-link>
+        <router-link to="/" class="homebtn"><img src="../assets/boat.png" alt="home">Home</router-link>
         <img class="bg" src="@/assets/svg/bg_add.svg" alt="bg">
         <img class="hand" src="@/assets/svg/hand.svg" alt="hand">
         <div class="flex" v-show="!personOn && !sauvetageOn">
@@ -48,10 +48,12 @@ export default {
         overflow: hidden
     }
     .bg{
+        position: absolute;
         background-size: cover;
         background-repeat: no-repeat;
         width: 100vw;
         height: 100vh;
+        z-index: -1;
     }
     .hand{
         position: absolute;

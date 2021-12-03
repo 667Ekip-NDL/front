@@ -3,13 +3,12 @@
     <div class="header">
       <span class="header__title">Sauveteurs du dunkerquois</span>
       <ul class="header__links">
-        <li><router-link to="/" class="header__links__aLink">Accueil</router-link></li>
         <li><router-link to="/add" class="header__links__aLink">Ajout</router-link></li>
       </ul>
       <span class="header__spacer"></span>
       <span class="header__searchText">Rechercher :</span>
       <input id="searchbar" type="text" placeholder="Sauveteurs, bateaux, ..." class="header__searchInput" v-model="input">
-      <img src="../images/loupe.png" class="header__searchIcon">      
+      <img @click="search" src="../images/loupe.png" class="header__searchIcon">      
     </div>
     <div class="contain_resultat">
       <div class="resultat_recherche" v-for="r in search_results" v-bind:key="r">
@@ -25,11 +24,14 @@
 <script>
 
 import Bateau from '@/components/Bateau.vue'
-
+import { mapActions } from 'vuex'
 export default{
     name: 'Header',
     components: {
         Bateau
+    },
+    methods: {
+        ...mapActions(['search'])
     },
     data(){
         return{
