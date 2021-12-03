@@ -1,5 +1,5 @@
 <template>
-<div class="header">
+<div class="headerAide">
 <router-link to="/" class="homebtn"><img src="../assets/speed-boat.png" alt="home">Home</router-link>
 <h1>AIDE</h1>
 </div>
@@ -109,10 +109,13 @@ export default {
         font-size: 1.2rem;
     }
 }
-.header{
+.headerAide{
     position: fixed;
     z-index: 10;
     width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
     background-color: white;
     opacity: 0.8;
     align-items: center;
