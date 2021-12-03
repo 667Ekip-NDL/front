@@ -31,6 +31,18 @@
           Il n’y a à cela aucun mérite…
           <span class="home__content__presentation__citation__guillemet">"</span>
         </p>
+
+        <div class="home__content__presentation__articles">
+          <a href="https://sauveteurdudunkerquois.fr/85gol-0059b/" class="home__content__presentation__articles__card">
+            <img src="../images/journalDeBord.png" class="home__content__presentation__articles__card__image">
+            <span class="home__content__presentation__articles__card__texte">1905 CAP-HORN sauvetage GARDSALE</span>
+          </a>
+
+          <a href="https://sauveteurdudunkerquois.fr/05gar-0402b/" class="home__content__presentation__articles__card">
+            <img src="../images/dossierSemaine.png" class="home__content__presentation__articles__card__image">
+            <span class="home__content__presentation__articles__card__texte">Il y a 136 ans sauvetage de la goélette anglaise GOLDEN SHEAF</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -112,6 +124,44 @@ export default {
           color: orange;
           font-size: 70px;
           font-weight: bolder;
+        }
+      }
+
+      &__articles {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 32px 0px 32px 0px;
+        width: 100%;
+        height: auto;
+
+        &__card {
+          position: relative;
+          width: 400px;
+          height: 300px;
+          text-decoration: none;
+          border: solid 1px black;
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+
+          &:visited {
+            text-decoration-color: none;
+            color: navy;
+          }
+
+          &__image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          }
+
+          &__texte {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: navy;
+            background-color: white;
+            border-top: solid 2px navy;
+          }
         }
       }
     }
