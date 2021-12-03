@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <Header/>   
-    <div class="home__content">
+    <Header/>  
+    <p>{{searched}}</p> 
+    <div v-show="!searched" class="home__content">
       <div class="home__content__bienvenue">
         <div class="home__content__bienvenue__imageAccueil"></div>
         <p class="home__content__bienvenue__texteAccueil">
@@ -54,18 +55,41 @@
         
       </div>
     </div>
+  <!--LOADER-->
+    <div v-show="searched && research_response=={}">
+      <p>je cherche</p>
+    </div>
+  <!--cards-->
+  <div v-show="searched && research_response!={}">
+    <div>
+        <div v-for="r in research_response" v-bind:key="r">
+            <Bateau v-if="r['type']=='bateau'"
+            :nom_bateau="r['data']['nom']"
+            :capacite="r['data']['capacite']"
+            :description="r['data']['description']"
+            :capitaine="r['data']['capitaine']"
+            :sorties="r['data']['sorties']"
+            />
+        </div>
+    </div>
+  </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
+import Bateau from '@/components/Bateau.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
   components: {
-    Header
-  }
+    Header,Bateau,
+  },
+  computed: {
+        ...mapState(['research_response','searched'])
+    }
 }
 </script>
 
@@ -80,7 +104,7 @@ export default {
     &__bienvenue {
       position: relative;
       width: 100%;
-      height: 700px;
+      height: calc(100vh - 64px - 5px); 
       border-bottom: solid 5px navy;
 
       &__imageAccueil {
@@ -98,7 +122,7 @@ export default {
       &__texteAccueil {
         position: absolute;
         z-index: 1;
-        top: 80px;
+        top: 175px;
         left: 10%;
         margin: 0px;
         padding: 16px;
