@@ -60,7 +60,7 @@
       <img  src="@/assets/load.gif" alt="thomas pesquet">
     </div>
   <!--cards-->
-    <div v-show="searched && research_response!={}">
+    <div v-show="searched && research_response!=Array()">
       <div class="contain_resultat">
         <div v-for="r in research_response" v-bind:key="r">
             <Bateau v-if="r['type']=='sauvetage'"
