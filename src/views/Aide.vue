@@ -7,21 +7,21 @@
         
         <div>
             <div id="bulle1">
-                <p id="textB1">A quoi sert ce site ? <br><br>
+                <p id="textB1">À quoi sert ce site ? <br><br>
                 Il permet un accès illimité  aux informations concernant les sauveteurs de Dunkerque de différentes époques 
                 ainsi que leurs missions en mer.
                 </p>
             </div>
             <div id="bulle2">
                 <p id="textB2">Comment accéder à ces informations ?<br><br>
-                Pour cela, il vous suffit de renseigner dans la bar de recherche le nom du sauveteur ou de du sauvetage que vous 
+                Pour cela, il vous suffit de renseigner dans la barre de recherche le nom du sauveteur ou de du sauvetage que vous 
                 recherchez. Le site vous proposera les fiches se rapprochant le plus de votre demande.
                 </p>
             </div>
             <div id="bulle3">
                 <p id="textB3">Comment participer au projet ? <br><br>
-                Pour participer au projet, deux cas de figure se présentent : soit vous détenez des informations officielles (exemple: archives)
-                pouvant être ajouter au site. Soit vous pouvez partager le site afin que les exploits et le travail des sauveteur soit reconnu de toutes et tous !
+                Pour participer au projet, deux cas de figure se présentent : soit vous détenez des informations officielles
+                pouvant être ajouter au site. Soit vous pouvez partager le site afin que les exploits et le travail des sauveteurs soient reconnus de toutes et tous !
                 </p>
             </div>
         </div>

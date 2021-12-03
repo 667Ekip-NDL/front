@@ -61,20 +61,20 @@
     </div>
   <!--cards-->
     <div v-show="searched && research_response!={}">
-      <div>
-          <div v-for="r in research_response" v-bind:key="r">
-              <Bateau v-if="r['type']=='sauvetage'"
-              :title="r['data']['title']"
-              :date="r['data']['date']"
-              :personnes_sauves="r['data']['saved']"
-              :participants="r['data']['participants']"
-              />
-              <FicheTechniqueSauveteur v-if="r['type']=='personne'"
-              :nom_sauveteur="r['data']['nom']"
-              :prenom_sauveteur="r['data']['prenom']"
-              :personnes_sauves="r['data']['saved']"
-              />
-          </div>
+      <div class="contain_resultat">
+        <div v-for="r in research_response" v-bind:key="r">
+            <Bateau v-if="r['type']=='sauvetage'"
+            :title="r['title']"
+            :date="r['date']"
+            :personnes_sauves="r['saved']"
+            :participants="r['participants']"
+            />
+            <FicheTechniqueSauveteur v-if="r['type']=='personne'"
+            :nom_sauveteur="r['nom']"
+            :prenom_sauveteur="r['prenom']"
+            :personnes_sauves="r['saved']"
+            />
+        </div>
       </div>
     </div>
     <div>
@@ -103,7 +103,11 @@ export default {
 </script>
 
 <style lang="scss">
-
+.contain_resultat{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 .loader{
   display:flex;
   justify-content:center;
