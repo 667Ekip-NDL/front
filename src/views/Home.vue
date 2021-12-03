@@ -43,6 +43,15 @@
             <span class="home__content__presentation__articles__card__texte">Il y a 136 ans sauvetage de la goélette anglaise GOLDEN SHEAF</span>
           </a>
         </div>
+        
+        <h1 class="home__content__presentation__titreSNSM">
+          Nos amis de la SNSM - <span class="home__content__presentation__titreSNSM--smallerItalic">Dunkerque</span>
+        </h1>
+
+        <div class="home__content__presentation__imageSNSMDiv">
+          <img src="../images/interview-le-daguenel.jpg" class="home__content__presentation__imageSNSMDiv__image">
+        </div>
+        
       </div>
     </div>
   </div>
@@ -79,7 +88,7 @@ export default {
         z-index: 0;
         width: 100%;
         height: 100%;
-        background-image: url(../images/dunkerque.webp);
+        background-image: url(../images/bateau_sauvetage.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -90,15 +99,17 @@ export default {
         position: absolute;
         z-index: 1;
         top: 80px;
-        left: 100px;
+        left: 10%;
         margin: 0px;
         padding: 16px;
-        width: 60%;
+        width: 80%;
+        height: auto;
+        max-height: 540px;
         color: white;
         font-size: 36px;
         font-weight: bold;
         text-align: justify;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.7);
         border: solid 3px white;
         box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.5);
       }
@@ -130,7 +141,7 @@ export default {
       &__articles {
         display: flex;
         justify-content: space-evenly;
-        margin-top: 32px 0px 32px 0px;
+        margin: 32px 0px 32px 0px;
         width: 100%;
         height: auto;
 
@@ -162,6 +173,31 @@ export default {
             background-color: white;
             border-top: solid 2px navy;
           }
+        }
+      }
+
+      &__titreSNSM {
+        margin: 64px 0px 0px 16px;
+        color: navy;
+        font-size: 35px;
+        font-weight: bold;
+
+        &--smallerItalic {
+          font-size: 30px;
+          font-weight: lighter;
+          font-style: italic;
+        }
+      }
+
+      &__imageSNSMDiv {
+        display: flex;
+        justify-content: center;
+        margin: 16px 0px 16px 0px;
+        width: 100%;
+
+        &__image {
+          border: solid 1px navy;
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
         }
       }
     }
