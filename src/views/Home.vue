@@ -67,6 +67,7 @@
             :title="r['data']['title']"
             :date="r['data']['date']"
             :personnes_sauves="r['data']['saved']"
+            :participants="r['data']['participants']"
             />
             <FicheTechniqueSauveteur v-if="r['type']=='personne'"
             :nom_sauveteur="r['data']['nom']"

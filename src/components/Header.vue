@@ -4,6 +4,7 @@
       <span class="header__title">Sauveteurs du dunkerquois</span>
       <ul class="header__links">
         <li><router-link to="/add" class="header__links__aLink">Ajout</router-link></li>
+         <li><router-link to="/aide" class="header__links__aLink">Aide</router-link></li>
       </ul>
       <span class="header__spacer"></span>
       <span class="header__searchText">Rechercher :</span>
