@@ -60,8 +60,8 @@
       <img  src="@/assets/load.gif" alt="thomas pesquet">
     </div>
   <!--cards-->
-  <div v-show="searched && research_response!={}">
-    <div class="contain_resultat">
+    <div v-show="searched && research_response!={}">
+      <div class="contain_resultat">
         <div v-for="r in research_response" v-bind:key="r">
             <Bateau v-if="r['type']=='sauvetage'"
             :title="r['title']"
@@ -75,8 +75,11 @@
             :personnes_sauves="r['saved']"
             />
         </div>
+      </div>
     </div>
-  </div>
+    <div>
+      <Nintendodo/>
+    </div>
   </div>
 </template>
 
@@ -85,12 +88,13 @@
 import Header from '@/components/Header.vue'
 import Bateau from '@/components/Bateau.vue'
 import FicheTechniqueSauveteur from '@/components/FicheTechniqueSauveteur.vue'
+import Nintendodo from "@/components/Nintendodo.vue"
 import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
   components: {
-    Header,Bateau,FicheTechniqueSauveteur
+    Header,Bateau,FicheTechniqueSauveteur,Nintendodo
   },
   computed: {
         ...mapState(['research_response','searched','searchedDone'])
