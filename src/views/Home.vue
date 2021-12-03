@@ -56,8 +56,8 @@
     </div>
   <!--LOADER-->
   
-    <div v-show="searched && !searchedDone">
-      <img src="@/assets/load.gif" alt="thomas pesquet">
+    <div class="loader" v-show="searched && !searchedDone">
+      <img  src="@/assets/load.gif" alt="thomas pesquet">
     </div>
   <!--cards-->
   <div v-show="searched && research_response!={}">
@@ -98,6 +98,14 @@ export default {
 </script>
 
 <style lang="scss">
+
+.loader{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width: 100%;
+  height: calc(100vh - 64px);
+}
 .home {
   width: 100%;
   min-height: 100vh;
