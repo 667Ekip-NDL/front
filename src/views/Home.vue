@@ -106,6 +106,9 @@ export default {
   align-items:center;
   width: 100%;
   height: calc(100vh - 64px);
+  img{
+    border-radius: 100%;
+  }
 }
 .home {
   width: 100%;
