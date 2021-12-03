@@ -1,19 +1,119 @@
 <template>
+<div class="header">
+<h1>AIDE</h1>
+</div>
     <div class="Aide">
+        
         <div>
-            <Header/>
+            <div id="bulle1">
+                <p id="textB1">A quoi sert ce site ? <br><br>
+                Il permet un accès illimité  aux informations concernant les sauveteurs de Dunkerque de différentes époques 
+                ainsi que leurs missions en mer.
+                </p>
+            </div>
+            <div id="bulle2">
+                <p id="textB2">Comment accéder à ces informations ?<br><br>
+                Pour cela, il vous suffit de renseigner dans la bar de recherche le nom du sauveteur ou de du sauvetage que vous 
+                recherchez. Le site vous proposera les fiches se rapprochant le plus de votre demande.
+                </p>
+            </div>
+            <div id="bulle3">
+                <p id="textB3">Bulle3</p>
+            </div>
         </div>
     </div>
 </template>
 <script>
-import Header from '../components/Header.vue'
 export default {
     name:"Aide",
     components: {
-        Header
+        
     }
 }
 </script>
-<style lang="">
+<style lang="scss">
+.Aide{
+    background-image: url(../assets/svg/stacked_waves.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+    height: auto;
+    min-width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    font-family: 'BioRhyme', serif;
+    overflow: hidden;
     
+}
+#bulle1{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 580px;
+    width: 890px;
+    background-repeat: no-repeat;
+    top: 2vw;
+    left: 3vw;
+    background-image: url("../assets/svg/Bulle2.svg");
+    align-items: center;
+    #textB1{
+        position: absolute;
+        max-width: 300px;
+        max-height: 230px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+}
+#bulle2{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 580px;
+    width: 900px;
+    background-repeat: no-repeat;
+    top: 10vw;
+    left: 50vw;
+    background-image: url("../assets/svg/Bulle1.svg");
+    align-items: center;
+    #textB2{
+        position: absolute;
+        max-width: 300px;
+        max-height: 230px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+}
+#bulle3{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 580px;
+    width: 900px;
+    background-repeat: no-repeat;
+    top: 22vw;
+    left: 20vw;
+    background-image: url("../assets/svg/Bulle3.svg");
+    align-items: center;
+    #textB3{
+        position: absolute;
+        max-width: 300px;
+        max-height: 230px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+}
+.header{
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    background-color: white;
+    opacity: 0.8;
+    align-items: center;
+    h1{
+        text-align: center;
+    }
+}
 </style>
