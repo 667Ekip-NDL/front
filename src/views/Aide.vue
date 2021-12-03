@@ -1,5 +1,6 @@
 <template>
 <div class="header">
+<router-link to="/" class="homebtn"><img src="../assets/speed-boat.png" alt="home">Home</router-link>
 <h1>AIDE</h1>
 </div>
     <div class="Aide">
@@ -119,6 +120,22 @@ export default {
         color: black;
         text-align: center;
         margin: auto;
+    }
+    .homebtn{
+        position:absolute;
+        top: 10px;
+        left: 10px;
+        img{
+            width:5vh;
+            height:5vh;
+            margin-right: 5px;
+        }
+        display:flex;
+        align-items:center;
+        font-size:2rem;
+        color:$dark-blue;
+        text-decoration: none;
+        
     }
 }
 </style>
