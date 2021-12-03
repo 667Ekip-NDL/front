@@ -7,7 +7,7 @@
       </ul>
       <span class="header__spacer"></span>
       <span class="header__searchText">Rechercher :</span>
-      <input id="searchbar" type="text" placeholder="Sauveteurs, bateaux, ..." class="header__searchInput" v-model="input">
+      <input id="searchbar" type="text" placeholder="Sauveteurs, Sauvetage, ..." class="header__searchInput" v-model="input">
       <img @click="search" src="../images/loupe.png" class="header__searchIcon">      
     </div>
     <div class="contain_resultat">
