@@ -60,23 +60,26 @@
       <img  src="@/assets/load.gif" alt="thomas pesquet">
     </div>
   <!--cards-->
-  <div v-show="searched && research_response!={}">
-    <div>
-        <div v-for="r in research_response" v-bind:key="r">
-            <Bateau v-if="r['type']=='sauvetage'"
-            :title="r['data']['title']"
-            :date="r['data']['date']"
-            :personnes_sauves="r['data']['saved']"
-            :participants="r['data']['participants']"
-            />
-            <FicheTechniqueSauveteur v-if="r['type']=='personne'"
-            :nom_sauveteur="r['data']['nom']"
-            :prenom_sauveteur="r['data']['prenom']"
-            :personnes_sauves="r['data']['saved']"
-            />
-        </div>
+    <div v-show="searched && research_response!={}">
+      <div>
+          <div v-for="r in research_response" v-bind:key="r">
+              <Bateau v-if="r['type']=='sauvetage'"
+              :title="r['data']['title']"
+              :date="r['data']['date']"
+              :personnes_sauves="r['data']['saved']"
+              :participants="r['data']['participants']"
+              />
+              <FicheTechniqueSauveteur v-if="r['type']=='personne'"
+              :nom_sauveteur="r['data']['nom']"
+              :prenom_sauveteur="r['data']['prenom']"
+              :personnes_sauves="r['data']['saved']"
+              />
+          </div>
+      </div>
     </div>
-  </div>
+    <div>
+      <Nintendodo/>
+    </div>
   </div>
 </template>
 
@@ -85,12 +88,13 @@
 import Header from '@/components/Header.vue'
 import Bateau from '@/components/Bateau.vue'
 import FicheTechniqueSauveteur from '@/components/FicheTechniqueSauveteur.vue'
+import Nintendodo from "@/components/Nintendodo.vue"
 import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
   components: {
-    Header,Bateau,FicheTechniqueSauveteur
+    Header,Bateau,FicheTechniqueSauveteur,Nintendodo
   },
   computed: {
         ...mapState(['research_response','searched','searchedDone'])
