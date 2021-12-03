@@ -61,7 +61,7 @@
     </div>
   <!--cards-->
   <div v-show="searched && research_response!={}">
-    <div>
+    <div class="contain_resultat">
         <div v-for="r in research_response" v-bind:key="r">
             <Bateau v-if="r['type']=='sauvetage'"
             :title="r['title']"
@@ -99,7 +99,11 @@ export default {
 </script>
 
 <style lang="scss">
-
+.contain_resultat{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 .loader{
   display:flex;
   justify-content:center;
