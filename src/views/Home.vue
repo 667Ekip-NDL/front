@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <Header/>  
-    <p>{{searched}}</p> 
     <div v-show="!searched" class="home__content">
       <div class="home__content__bienvenue">
         <div class="home__content__bienvenue__imageAccueil"></div>
@@ -57,18 +56,21 @@
     </div>
   <!--LOADER-->
     <div v-show="searched && research_response=={}">
-      <p>je cherche</p>
+      <img src="@/assets/load.gif" alt="thomas pesquet">
     </div>
   <!--cards-->
   <div v-show="searched && research_response!={}">
     <div>
         <div v-for="r in research_response" v-bind:key="r">
-            <Bateau v-if="r['type']=='bateau'"
-            :nom_bateau="r['data']['nom']"
-            :capacite="r['data']['capacite']"
-            :description="r['data']['description']"
-            :capitaine="r['data']['capitaine']"
-            :sorties="r['data']['sorties']"
+            <Bateau v-if="r['type']=='sauvetage'"
+            :title="r['data']['title']"
+            :date="r['data']['date']"
+            :personnes_sauves="r['data']['saved']"
+            />
+            <FicheTechniqueSauveteur v-if="r['type']=='personne'"
+            :nom_sauveteur="r['data']['nom']"
+            :prenom_sauveteur="r['data']['prenom']"
+            :personnes_sauves="r['data']['saved']"
             />
         </div>
     </div>
@@ -80,12 +82,13 @@
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import Bateau from '@/components/Bateau.vue'
+import FicheTechniqueSauveteur from '@/components/FicheTechniqueSauveteur.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
   components: {
-    Header,Bateau,
+    Header,Bateau,FicheTechniqueSauveteur
   },
   computed: {
         ...mapState(['research_response','searched'])

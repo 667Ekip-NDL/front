@@ -48,10 +48,12 @@ export default {
         overflow: hidden
     }
     .bg{
+        position: absolute;
         background-size: cover;
         background-repeat: no-repeat;
         width: 100vw;
         height: 100vh;
+        z-index: -1;
     }
     .hand{
         position: absolute;

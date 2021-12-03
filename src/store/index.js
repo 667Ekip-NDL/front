@@ -19,6 +19,7 @@ export default createStore({
       .then(function (response) {
         commit("setSearched",true)
         commit("setResearch",response.data.data);
+        console.log(response.data.data)
         //alert (response.data);
 
 
