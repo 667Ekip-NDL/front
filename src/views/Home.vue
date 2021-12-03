@@ -101,7 +101,8 @@ export default {
 <style lang="scss">
 .contain_resultat{
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
   }
 .loader{
