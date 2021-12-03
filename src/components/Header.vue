@@ -2,7 +2,8 @@
     <div class="header">
       <span class="header__title">Sauveteurs du dunkerquois</span>
       <ul class="header__links">
-        <li>Accueil</li>
+        <router-link to="/">Accueil</router-link>
+        <router-link to="/add">Ajout</router-link>
       </ul>
       <span class="header__spacer"></span>
       <span class="header__searchText">Rechercher :</span>
