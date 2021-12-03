@@ -4,12 +4,14 @@
       <span class="header__title">Sauveteurs du dunkerquois</span>
       <ul class="header__links">
         <li><router-link to="/add" class="header__links__aLink">Ajout</router-link></li>
+         <li><router-link to="/aide" class="header__links__aLink">Aide</router-link></li>
       </ul>
       <span class="header__spacer"></span>
       <span class="header__searchText">Rechercher :</span>
-      <input id="searchbar" type="text" placeholder="Sauveteurs, bateaux, ..." class="header__searchInput" v-model="input">
+      <input v-model="searchStr" id="searchbar" type="text" placeholder="Sauveteurs, Sauvetage, ..." class="header__searchInput">
       <img @click="search" src="../images/loupe.png" class="header__searchIcon">      
     </div>
+    <!--
     <div class="contain_resultat">
       <div class="resultat_recherche" v-for="r in search_results" v-bind:key="r">
               <Bateau v-if="r['type']=='bateau'"
@@ -18,24 +20,32 @@
               :personnes_sauves="r['data']['personnes_sauves']"
               />
       </div>
-    </div>
+    </div>-->
     
 </template>
 <script>
 
-import Bateau from '@/components/Bateau.vue'
+//import Bateau from '@/components/Bateau.vue'
 import { mapActions } from 'vuex'
+
 export default{
     name: 'Header',
     components: {
-        Bateau
+        //Bateau
     },
-    methods: {
-        ...mapActions(['search'])
+    computed: {
+      ...mapActions(['search']),
+        searchStr: {
+              get () {
+                return this.$store.state.searchStr
+              },
+              set (value) {
+                this.$store.commit('updateSearchStr', value)
+              }
+            },
     },
     data(){
         return{
-            input:"",
             sauveteur:false,
             bateau:false,
             search_results:[
@@ -55,7 +65,7 @@ export default{
                 }*/
             ]
         }
-    },
+    },/*
     mounted() {
         function search(input){
             if (input.includes(" ") || input.length > 3){
@@ -63,12 +73,13 @@ export default{
             }
             
         }
-
+      
         var searchbar = document.getElementById("searchbar")
         searchbar.addEventListener('input', () => {
                search(searchbar.value)
             });
-    }
+            
+    }*/
 }
 </script>
 <style lang="scss">

@@ -5,6 +5,10 @@
                 <h2>{{title}}</h2>
                 <p>Date : {{date}}</p>
                 <p>Personnes sauvés : {{personnes_sauves}}</p>
+                <div>
+                    <p>Participants :</p>
+                    <p v-for="p in participants" v-bind:key="p">{{p}}</p>
+                </div>
             </div>
             <img class="bateauIMG" src="@/assets/bateau.png" :alt="title">
             
@@ -28,6 +32,9 @@ export default {
         personnes_sauves:{
             type: String,
             default: 'Inconnu'
+        },
+        participants:{
+            default: []
         }
     }
 }
