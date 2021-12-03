@@ -18,7 +18,10 @@
                 </p>
             </div>
             <div id="bulle3">
-                <p id="textB3">Bulle3</p>
+                <p id="textB3">Comment participer au projet ? <br><br>
+                Pour participer au projet, deux cas de figure se présentent : soit vous détenez des informations officielles (exemple: archives)
+                pouvant être ajouter au site. Soit vous pouvez partager le site afin que les exploits et le travail des sauveteur soit reconnu de toutes et tous !
+                </p>
             </div>
         </div>
     </div>
@@ -62,7 +65,7 @@ export default {
         max-height: 230px;
         text-align: center;
         font-weight: bold;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 }
 #bulle2{
@@ -70,11 +73,11 @@ export default {
     justify-content: center;
     position: absolute;
     height: 580px;
-    width: 900px;
+    width: 890px;
     background-repeat: no-repeat;
     top: 10vw;
     left: 50vw;
-    background-image: url("../assets/svg/Bulle1.svg");
+    background-image: url("../assets/svg/Bulle3.svg");
     align-items: center;
     #textB2{
         position: absolute;
@@ -82,19 +85,19 @@ export default {
         max-height: 230px;
         text-align: center;
         font-weight: bold;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 }
 #bulle3{
     display: flex;
     justify-content: center;
     position: absolute;
-    height: 580px;
+    height: 540px;
     width: 900px;
     background-repeat: no-repeat;
     top: 22vw;
     left: 20vw;
-    background-image: url("../assets/svg/Bulle3.svg");
+    background-image: url("../assets/svg/Bulle1.svg");
     align-items: center;
     #textB3{
         position: absolute;
@@ -102,7 +105,7 @@ export default {
         max-height: 230px;
         text-align: center;
         font-weight: bold;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 }
 .header{
@@ -113,7 +116,9 @@ export default {
     opacity: 0.8;
     align-items: center;
     h1{
+        color: black;
         text-align: center;
+        margin: auto;
     }
 }
 </style>
