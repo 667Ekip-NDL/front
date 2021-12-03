@@ -1,14 +1,12 @@
 <template>
     <div class="containerBateau">       
         <div class="inline">
-            <img class="bateauIMG" src="@/assets/bateau.png" :alt="nom_bateau">
-            <div>
-                <h1>{{nom_bateau}}</h1>
-                <p>Capacité :{{capacite}}</p>
-                <p>Description :{{description}}</p>
-                <p>Capitaine :{{capitaine}}</p>
-                <p>Nombre de sorties en mer :{{sorties}}</p>
+            <div class="content">
+                <h2>{{title}}</h2>
+                <p>Date : {{date}}</p>
+                <p>Personnes sauvés : {{personnes_sauves}}</p>
             </div>
+            <img class="bateauIMG" src="@/assets/bateau.png" :alt="title">
             
         </div>
         
@@ -19,27 +17,18 @@
 export default {
     name:"Bateau",
     props:{
-        nom_bateau:{
+        title:{
             type: String,
             default: 'Inconnu'
         },
-        capacite:{
+        date:{
             type: String,
             default: 'Inconnu'
         },
-        description:{
-            type: String,
-            default: 'Pas de description'
-        },
-        capitaine:{
+        personnes_sauves:{
             type: String,
             default: 'Inconnu'
-        },
-        sorties:{
-            type: String,
-            default: 'Inconnu'
-        },
-
+        }
     }
 }
 </script>
@@ -47,8 +36,8 @@ export default {
 
 <style lang="scss">
     .containerBateau{
-        height:300px;
-        width:500px;
+        min-height:300px;
+        width: 45vw;
         position: relative;
         //border:1px solid black;
         border-radius: 20px;
@@ -61,7 +50,7 @@ export default {
         padding: .5rem;
     }
     .inline{
-        width:100%;
+        width:90%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -69,12 +58,6 @@ export default {
     }
     img{
         object-fit: cover;
-    }
-    .bg{
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        z-index: -1;
     }
     .bateauIMG{
         border-radius: 50%;
